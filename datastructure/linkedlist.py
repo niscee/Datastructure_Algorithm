@@ -49,6 +49,21 @@ class LinkedList:
                    current.next = None  
             current = current.next    
                        
+    
+    
+    # reverse linklist
+    def reversePrint(self):
+        prev = None
+        current = self.head
+        while(current is not None):
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+        self.head = prev
+
+
+
             
 
 
@@ -76,11 +91,15 @@ link_head.addNewNode(3, "tuesday")
 link_head.addNewNode(5, "thursday") 
 link_head.printList()
 
+print("-- reverse --")
+link_head.reversePrint()
+link_head.printList()
+
 
 #remove existing node.
-print("-----------------------------")
-print("After removing node:")
-link_head.removeNode(5) 
-link_head.removeNode(2) 
-link_head.printList()
+# print("-----------------------------")
+# print("After removing node:")
+# link_head.removeNode(5) 
+# link_head.removeNode(2) 
+# link_head.printList()
 
